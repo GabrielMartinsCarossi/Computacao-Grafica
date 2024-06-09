@@ -103,19 +103,25 @@ int main()
 		float angle = (GLfloat)glfwGetTime();
 
 		glm::mat4 model = glm::mat4(1);
+		glm::mat4 model1 = glm::mat4(1);
+
 		if (rotateX)
 		{
 			model = glm::rotate(model, angle, glm::vec3(1.0f, 0.0f, 0.0f));
+			model1 = glm::rotate(model1, angle, glm::vec3(1.0f, 0.0f, 0.0f));
 		}
 		else if (rotateY)
 		{
 			model = glm::rotate(model, angle, glm::vec3(0.0f, 1.0f, 0.0f));
+			model1 = glm::rotate(model1, angle, glm::vec3(0.0f, 1.0f, 0.0f));
 		}
 		else if (rotateZ)
 		{
 			model = glm::rotate(model, angle, glm::vec3(0.0f, 0.0f, 1.0f));
+			model1 = glm::rotate(model1, angle, glm::vec3(0.0f, 0.0f, 1.0f));
 		}
 
+		// Desenhar o primeiro cubo
 		model = glm::translate(model, glm::vec3(posX, posY, posZ));
 		model = glm::scale(model, glm::vec3(scale, scale, scale));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -124,11 +130,10 @@ int main()
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);
 
-		// Desenhar um segundo cubo com uma transformação diferente
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posX + 1.0, posY, posZ));
-		model = glm::scale(model, glm::vec3(scale, scale, scale));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		// Desenhar o segundo cubo em outro local do espaço
+		model1 = glm::translate(model1, glm::vec3(posX + 0.6, posY, posZ));
+		model1 = glm::scale(model1, glm::vec3(scale * 0.7, scale * 0.7, scale * 0.7));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model1));
 
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
