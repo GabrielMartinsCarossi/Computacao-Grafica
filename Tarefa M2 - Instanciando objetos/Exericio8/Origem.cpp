@@ -1,3 +1,5 @@
+// Tarefa M2 | Instanciando objetos na cena 3D | Gabriel Carossi
+
 #include <iostream>
 #include <string>
 #include <assert.h>
@@ -242,6 +244,8 @@ int setupShader()
 	return shaderProgram;
 }
 
+
+// Criação da geometria do cubo
 int setupGeometry()
 {
 	// Coordenadas x, y, z e cores r, g, b dos vértices do cubo
