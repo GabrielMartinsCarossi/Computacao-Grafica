@@ -69,14 +69,14 @@ int main()
 	//Você deve adaptar para a versão do OpenGL suportada por sua placa
 	//Sugestão: comente essas linhas de código para desobrir a versão e
 	//depois atualize (por exemplo: 4.5 com 4 e 5)
-	//glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	//glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-	//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	//Essencial para computadores da Apple
-//#ifdef __APPLE__
-//	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-//#endif
+	//#ifdef __APPLE__
+	//	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	//#endif
 
 	// Criação da janela GLFW
 	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Ola 3D -- Gabriel!", nullptr, nullptr);
@@ -206,11 +206,9 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 		rotateZ = true;
 	}
 
-
-
 }
 
-//Esta função está basntante hardcoded - objetivo é compilar e "buildar" um programa de
+//Esta função está bastante hardcoded - objetivo é compilar e "buildar" um programa de
 // shader simples e único neste exemplo de código
 // O código fonte do vertex e fragment shader está nos arrays vertexShaderSource e
 // fragmentShader source no iniçio deste arquivo
@@ -334,8 +332,6 @@ int setupGeometry()
 	//Atributo cor (r, g, b)
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)(3*sizeof(GLfloat)));
 	glEnableVertexAttribArray(1);
-
-
 
 	// Observe que isso é permitido, a chamada para glVertexAttribPointer registrou o VBO como o objeto de buffer de vértice 
 	// atualmente vinculado - para que depois possamos desvincular com segurança
