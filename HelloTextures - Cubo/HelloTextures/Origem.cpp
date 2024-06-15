@@ -1,11 +1,6 @@
-/* Hello Triangle - código adaptado de https://learnopengl.com/#!Getting-started/Hello-Triangle
- *
- * Adaptado por Rossana Baptista Queiroz
- * para a disciplina de Processamento Gráfico - Jogos Digitais - Unisinos
- * Versão inicial: 7/4/2017
- * Última atualização em 11/04/2022
- *
- */
+/* 
+*  Tarefa M3 - Adicionando Texturas 
+*/
 
 #include <iostream>
 #include <string>
@@ -59,9 +54,9 @@ int main()
 	//Você deve adaptar para a versão do OpenGL suportada por sua placa
 	//Sugestão: comente essas linhas de código para desobrir a versão e
 	//depois atualize (por exemplo: 4.5 com 4 e 5)
-	//glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	//glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-	//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	//Essencial para computadores da Apple
 //#ifdef __APPLE__
@@ -92,7 +87,7 @@ int main()
 	Shader shader("../shaders/sprite.vs", "../shaders/sprite.fs");
 
 	//Carregando uma textura e armazenando o identificador na memória
-	GLuint texID = loadTexture("Suzanne.png");
+	GLuint texID = loadTexture("C:/Users/Gabriel M. Carossi/source/repos/CGCCHibrido-main/HelloTextures - Cubo/HelloTextures/Suzanne.png");
 
 	// Gerando uma geometria de quadrilátero com coordenadas de textura
 	int nVerts;
