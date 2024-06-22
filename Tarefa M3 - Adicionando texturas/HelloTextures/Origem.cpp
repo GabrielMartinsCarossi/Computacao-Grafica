@@ -87,7 +87,7 @@ int main()
 	Shader shader("../shaders/sprite.vs", "../shaders/sprite.fs");
 
 	//Carregando uma textura e armazenando o identificador na memória
-	GLuint texID = loadTexture("C:/Users/Gabriel M. Carossi/source/repos/CGCCHibrido-main/HelloTextures - Cubo/HelloTextures/Suzanne.png");
+	GLuint texID = loadTexture("Suzanne.png");
 
 	// Gerando uma geometria de quadrilátero com coordenadas de textura
 	int nVerts;
